@@ -1,0 +1,33 @@
+{
+  "name": "vite-demo",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@lucky-canvas/vue": "^0.1.6",
+    "ant-design-vue": "^3.0.0-alpha.14",
+    "loadsh": "^0.0.4",
+    "pinia": "^2.0.0-rc.10",
+    "vue": "^3.2.16",
+    "vue-i18n": "^9.2.0-beta.23",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.13",
+    "@vitejs/plugin-vue": "^1.9.3",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "less": "^4.1.2",
+    "prettier": "^1.19.1",
+    "typescript": "^4.4.3",
+    "vite": "^2.6.4",
+    "vite-plugin-importer": "^0.2.5",
+    "vue-tsc": "^0.3.0"
+  }
+}

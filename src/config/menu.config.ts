@@ -25,6 +25,14 @@ const menuList: MenuItem[] = [
       },
     ],
   },
+  {
+    name: "permisson",
+    path: '/permisson',
+    icon: '',
+    title: '权限管理',
+    orderNo: 2,
+    hideMenu: false,
+  }
 ]
 
 export default menuList;

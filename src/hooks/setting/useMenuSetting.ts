@@ -1,5 +1,7 @@
-import { computed, unref, ref } from 'vue';
+import { computed, unref } from 'vue';
 import { useAppStore } from "@/store/app";
+import { MenuItem } from '@/types/config.d';
+import menuList from '@/config/menu.config';
 
 export function useMenuSetting() {
   const appStore = useAppStore()
@@ -10,9 +12,14 @@ export function useMenuSetting() {
     });
   }
 
+  function getMenus():MenuItem[] {
+    return menuList;
+  }
+
   return {
     getCollapsed,
     toggleCollapsed,
+    getMenus,
   }
 
 }

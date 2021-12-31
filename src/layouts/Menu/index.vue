@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-12-29 14:46:55
- * @LastEditTime: 2021-12-29 20:18:40
+ * @LastEditTime: 2021-12-30 17:29:53
  * @LastEditors: Please set LastEditors
  * @Description: 菜单
  * @FilePath: /vite-demo/src/layouts/Menu/index.vue
@@ -25,9 +25,9 @@ import {
   VideoCameraOutlined,
   UploadOutlined,
 } from '@ant-design/icons-vue';
-import menuList from '@/config/menu.config';
 import SubMenuItem from './SubMenuItem.vue';
 import { useGo } from '@/hooks/setting/usePage';
+import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
 
 export default defineComponent({
   components: {
@@ -40,15 +40,16 @@ export default defineComponent({
   },
   setup() {
     const go = useGo()
+    const { getMenus } = useMenuSetting()
 
     function handleMenuClick({ key }: { key: string }) {
       go(key)
     }
 
     return {
-      menuList,
       selectedKeys: ref<string[]>(['1']),
       handleMenuClick,
+      menuList: getMenus()
     };
   }
 })

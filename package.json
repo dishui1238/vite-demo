@@ -7,6 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^6.0.1",
     "@lucky-canvas/vue": "^0.1.6",
     "ant-design-vue": "^3.0.0-alpha.14",
     "loadsh": "^0.0.4",

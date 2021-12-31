@@ -2,7 +2,7 @@
   <BasicMenuItem v-if="!menuHasChildren(item)" v-bind="$props" />
   <SubMenu v-if="menuHasChildren(item)">
     <template #title>
-      <span class="menu_item_flex">{{ item.title }}</span>
+      <MenuItemContent :item="item" />
     </template>
     <template v-for="childrenItem in item.children" :key="childrenItem.path">
       <SubMenuItem v-bind="$props" :item="childrenItem" />
@@ -15,6 +15,7 @@ import { defineComponent, PropType } from 'vue'
 import { Menu } from 'ant-design-vue'
 import { MenuItem, ThemeType } from '@/types/config'
 import BasicMenuItem from './BasicMenuItem.vue'
+import MenuItemContent from './MenuItemContent.vue'
 
 export default defineComponent({
   name: 'SubMenuItem',
@@ -22,6 +23,7 @@ export default defineComponent({
   components: {
     SubMenu: Menu.SubMenu,
     BasicMenuItem,
+    MenuItemContent,
   },
   props: {
     item: {

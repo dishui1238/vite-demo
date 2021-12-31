@@ -1,30 +1,38 @@
 <template>
-  <Header class="layout-header">
-    <menu-unfold-outlined v-if="collapsed" class="trigger" @click="toggleCollapsed" />
-    <menu-fold-outlined v-else class="trigger" @click="toggleCollapsed" />
+  <Header :class="prefixCls">
+    <div :class="`${prefixCls}-left`">
+      <span :class="`${prefixCls}-trigger`">
+        <menu-unfold-outlined v-if="collapsed" @click="toggleCollapsed" />
+        <menu-fold-outlined v-else @click="toggleCollapsed" />
+      </span>
+      <LayoutBreadcrumb />
+    </div>
   </Header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, watchEffect } from 'vue'
 import { Layout } from 'ant-design-vue'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons-vue';
 import { useMenuSetting } from '@/hooks/setting/useMenuSetting'
+import LayoutBreadcrumb from './components/Breadcrumb.vue';
 
 export default defineComponent({
   components: {
     Header: Layout.Header,
     MenuUnfoldOutlined,
     MenuFoldOutlined,
+    LayoutBreadcrumb,
   },
   setup() {
+    const prefixCls = 'layout-header'
     const { getCollapsed, toggleCollapsed } = useMenuSetting()
 
-
     return {
+      prefixCls,
       collapsed: getCollapsed,
       toggleCollapsed,
     }
@@ -33,4 +41,14 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+.layout-header {
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+  &-trigger {
+    font-size: 16px;
+    padding: 1px 10px;
+  }
+}
 </style>

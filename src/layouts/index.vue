@@ -3,6 +3,7 @@
     <Sider />
     <Layout>
       <Header style="background: #fff; padding: 0" />
+      <TabPanesHeader />
       <Content />
     </Layout>
   </Layout>
@@ -14,6 +15,7 @@ import { Layout } from 'ant-design-vue'
 import Header from './Header/index.vue';
 import Sider from './Sider/index.vue'
 import Content from './Content/index.vue'
+import TabPanesHeader from './Tabs/index.vue'
 
 export default defineComponent({
   name: 'defaultLayout',
@@ -22,6 +24,7 @@ export default defineComponent({
     Header,
     Sider,
     Content,
+    TabPanesHeader,
   },
 
   setup() {

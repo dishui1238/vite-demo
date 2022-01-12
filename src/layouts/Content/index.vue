@@ -9,7 +9,7 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { Layout } from 'ant-design-vue'
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting'
+import { useMenuSetting } from '@/hooks/useMenuSetting'
 
 export default defineComponent({
   components: {
@@ -20,8 +20,6 @@ export default defineComponent({
 
 
     return {
-      selectedKeys: ref<string[]>(['1']),
-      getCollapsed,
     };
   }
 })

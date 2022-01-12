@@ -14,7 +14,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { Layout, Menu } from 'ant-design-vue'
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting'
+import { useMenuSetting } from '@/hooks/useMenuSetting'
 import LayoutMenu from '@/layouts/Menu/index.vue'
 import {
   UserOutlined,

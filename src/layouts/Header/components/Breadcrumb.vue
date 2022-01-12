@@ -13,9 +13,9 @@ import { defineComponent, ref, watchEffect } from 'vue'
 import { Breadcrumb } from 'ant-design-vue'
 import { useRouter } from 'vue-router';
 import { findPath } from '@/utils/menuHelper';
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
+import { useMenuSetting } from '@/hooks/useMenuSetting';
 import { MenuItem } from '@/types/config';
-import { useGo } from '@/hooks/setting/usePage';
+import { useGo } from '@/hooks/usePage';
 
 export default defineComponent({
   name: 'LayoutBreadcrumb',

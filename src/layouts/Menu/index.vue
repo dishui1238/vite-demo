@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-12-29 14:46:55
- * @LastEditTime: 2021-12-30 17:29:53
+ * @LastEditTime: 2022-01-11 20:12:22
  * @LastEditors: Please set LastEditors
  * @Description: 菜单
  * @FilePath: /vite-demo/src/layouts/Menu/index.vue
@@ -26,8 +26,8 @@ import {
   UploadOutlined,
 } from '@ant-design/icons-vue';
 import SubMenuItem from './SubMenuItem.vue';
-import { useGo } from '@/hooks/setting/usePage';
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting';
+import { useGo } from '@/hooks/usePage';
+import { useMenuSetting } from '@/hooks/useMenuSetting';
 
 export default defineComponent({
   components: {

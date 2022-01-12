@@ -1,3 +1,4 @@
+import { useRedo } from '@/hooks/useRedo';
 import { defineStore } from 'pinia'
 import type { RouteLocationNormalized, RouteLocationRaw, Router } from 'vue-router';
 
@@ -31,18 +32,26 @@ export const useTabStore = defineStore({
 
     closeTabByKey(key: string, router: Router) {
       const index = this.tabList.findIndex(item => item.path === key)
-
       const { currentRoute, replace } = router;
 
       if (index === -1) return
-
       this.tabList.splice(index, 1)
       // 如果关闭的是当前路由
       if (currentRoute.value.path === key) {
         const len = this.tabList.length
         replace(len ? this.tabList[len - 1] : '/')
       }
-    }
+    },
 
+    async refreshPage(router: Router) {
+      const { currentRoute } = router
+      const { name } = currentRoute.value
+
+      const findItem = this.tabList.find(item => item.name === name)
+      if (findItem) {
+        const redo = useRedo(router)
+        await redo()
+      }
+    }
   },
 })

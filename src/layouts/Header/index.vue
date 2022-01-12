@@ -17,7 +17,7 @@ import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
 } from '@ant-design/icons-vue';
-import { useMenuSetting } from '@/hooks/setting/useMenuSetting'
+import { useMenuSetting } from '@/hooks/useMenuSetting'
 import LayoutBreadcrumb from './components/Breadcrumb.vue';
 
 export default defineComponent({

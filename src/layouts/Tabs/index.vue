@@ -7,7 +7,11 @@
       @change="handleChange"
       @edit="handleEdit"
     >
-      <TabPane v-for="pane in getTabList" :key="pane.path" :tab="pane.name" :closable="true"></TabPane>
+      <TabPane v-for="pane in getTabList" :key="pane.path" :closable="true">
+        <template #tab>
+          <TabContent :tabItem="pane" />
+        </template>
+      </TabPane>
     </Tabs>
   </div>
 </template>
@@ -18,13 +22,15 @@ import { Tabs } from 'ant-design-vue'
 import { useTabStore } from '@/store/tabStore'
 import { useRouter } from 'vue-router'
 import { listenRouteChange } from '@/utils/routeChange'
-import { useGo } from '@/hooks/setting/usePage'
+import { useGo } from '@/hooks/usePage'
+import TabContent from './components/TabContent.vue'
 
 
 export default defineComponent({
   components: {
     Tabs,
-    TabPane: Tabs.TabPane
+    TabPane: Tabs.TabPane,
+    TabContent,
   },
   setup() {
     const activeKeyRef = ref('')
@@ -33,8 +39,11 @@ export default defineComponent({
     const router = useRouter()
     const go = useGo()
 
+    console.log('router', router.currentRoute.value);
+
     listenRouteChange((route) => {
       const { path } = route
+      console.log('route', route);
       activeKeyRef.value = path
       addTab(route)
     })
@@ -48,7 +57,6 @@ export default defineComponent({
       go(key)
     }
 
-
     return {
       activeKeyRef,
       getTabList,
@@ -60,7 +68,7 @@ export default defineComponent({
 </script>
 
 <style scoped lang="less">
-.tab-wrapper{
+.tab-wrapper {
   background-color: #fff;
   border: 1px solid #d9d9d9;
   display: flex;

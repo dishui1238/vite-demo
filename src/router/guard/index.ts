@@ -4,7 +4,10 @@ import type { Router } from 'vue-router'
 
 function createPageGuard(router: Router) {
   router.beforeEach((to) => {
-    setRouteChange(to)
+    const { meta = {} } = to
+    if (!meta.hideMenu) {
+      setRouteChange(to)
+    }
   })
 }
 

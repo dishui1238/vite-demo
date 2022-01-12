@@ -1,3 +1,4 @@
+import { REDIRECT_NAME } from "@/config/const.config";
 import DefaultLayout from "@/layouts/index.vue";
 
 export const RootRoute = {
@@ -9,14 +10,26 @@ export const RootRoute = {
   },
 };
 
-// export const LoginRoute = {
-//   path: "/login",
-//   name: "Login",
-//   component: () => import("/@/views/sys/login/Login.vue"),
-//   meta: {
-//     title: t("routes.basic.login"),
-//   },
-// };
+const REDIRECT_ROUTE = {
+  path: '/redirect',
+  name: 'RedirectTo',
+  component: DefaultLayout,
+  meta: {
+    hideBreadcrumb: true,
+    hideMenu: true,
+  },
+  children: [
+    {
+      path: '/redirect/:path(.*)',
+      name: REDIRECT_NAME,
+      component: () => import('@/views/sys/redirect/index.vue'),
+      meta: {
+        title: REDIRECT_NAME,
+        hideBreadcrumb: true,
+      },
+    }
+  ]
+}
 
 export const CommonRoute = [
   {
@@ -45,4 +58,4 @@ export const CommonRoute = [
   },
 ];
 
-export const basicRoutes = [...CommonRoute];
+export const basicRoutes = [REDIRECT_ROUTE, ...CommonRoute];

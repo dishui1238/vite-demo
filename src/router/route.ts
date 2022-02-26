@@ -54,6 +54,14 @@ export const CommonRoute = [
           title: "抽奖系统",
         },
       },
+      {
+        path: "editor",
+        name: "Editor",
+        component: () => import("../views/Editor/index.vue"),
+        meta: {
+          title: "富文本编辑器",
+        },
+      },
     ],
   },
 ];

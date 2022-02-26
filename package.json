@@ -8,10 +8,15 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.0.1",
+    "@ckeditor/ckeditor5-vue": "^2.0.1",
     "@lucky-canvas/vue": "^0.1.6",
+    "@tinymce/tinymce-vue": "^4.0.5",
     "ant-design-vue": "^3.0.0-alpha.14",
     "loadsh": "^0.0.4",
     "pinia": "^2.0.0-rc.10",
+    "postcss-loader": "3",
+    "raw-loader": "0.5.1",
+    "tinymce": "^5.10.2",
     "vue": "^3.2.16",
     "vue-i18n": "^9.2.0-beta.23",
     "vue-router": "4"

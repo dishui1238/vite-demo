@@ -1,6 +1,10 @@
 <template>
   <div class="content-wrapper">
-    <Editor v-model="contentValue" :init="initOptions" />
+    <textarea
+      id="tinymceId"
+      ref="elRef"
+      :style="{ visibility: 'hidden' }"
+    ></textarea>
   </div>
 </template>
 
@@ -52,7 +56,7 @@ export default defineComponent({
 
 
     onMounted(() => {
-      tinymce.init({})
+      tinymce.init({initOptions})
     });
 
     const initOptions = computed((): RawEditorSettings => {

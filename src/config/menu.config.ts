@@ -23,6 +23,13 @@ const menuList: MenuItem[] = [
         orderNo: 2,
         hideMenu: false,
       },
+      {
+        path: "/editor",
+        name: "dashboard.editor",
+        title: "富文本编辑器",
+        orderNo: 3,
+        hideMenu: false,
+      },
     ],
   },
   {

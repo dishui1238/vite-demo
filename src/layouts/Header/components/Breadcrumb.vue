@@ -2,7 +2,8 @@
   <div>
     <a-breadcrumb :routes="routes">
       <template #itemRender="{ route, paths }">
-        <router-link to @click="handleClick(route, paths, $event)">{{ route.title }}</router-link>
+        <span v-if="route.children">{{route.title}}</span>
+        <router-link v-else to @click="handleClick(route, paths, $event)">{{ route.title }}</router-link>
       </template>
     </a-breadcrumb>
   </div>

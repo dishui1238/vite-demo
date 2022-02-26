@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-12-27 16:53:51
- * @LastEditTime: 2022-01-11 17:56:32
+ * @LastEditTime: 2022-02-26 11:20:46
  * @LastEditors: Please set LastEditors
  * @Description: 抽奖大转盘
  * @FilePath: /vite-demo/src/views/luckDraw/index.vue
@@ -42,7 +42,7 @@ export default defineComponent({
     }
     // 抽奖结束会触发end回调
     function endCallback(prize: any) {
-      console.log('prize---',prize)
+      console.log('prize---11',prize)
     }
 
     return {

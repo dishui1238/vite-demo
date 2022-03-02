@@ -32,11 +32,11 @@ export default ({ mode }) => {
       alias: [
         {
           // @/xxxx => src/xxxx
-          find: /@\//,
+          find: "@/",
           replacement: pathResolve("src") + "/",
         },
         {
-          find: "@comp",
+          find: "@comp/",
           replacement: pathResolve("src/components") + "/",
         },
       ],

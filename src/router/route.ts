@@ -55,11 +55,11 @@ export const CommonRoute = [
         },
       },
       {
-        path: "editor",
-        name: "Editor",
-        component: () => import("../views/Editor/index.vue"),
+        path: "tinymce-editor",
+        name: "TinymceEditor",
+        component: () => import("../views/Editor/Tinymce/index.vue"),
         meta: {
-          title: "富文本编辑器",
+          title: "tinymce富文本编辑器",
         },
       },
     ],

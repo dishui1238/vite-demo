@@ -26,7 +26,8 @@ export default defineComponent({
       default: () => true
     },
   },
-  setup() {
+  setup(props) {
+    console.log('item', props.item);
     return {};
   },
 });

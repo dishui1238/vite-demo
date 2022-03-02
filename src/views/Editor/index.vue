@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
-import ClassicEditor from '../../../public/CKEditor/ckeditor';
+import ClassicEditor from '@/public/CKEditor/ckeditor';
 // import FontFamily from '@ckeditor/ckeditor5-font/src/fontfamily'
 
 

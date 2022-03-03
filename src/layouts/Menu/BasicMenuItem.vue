@@ -27,7 +27,6 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log('item', props.item);
     return {};
   },
 });

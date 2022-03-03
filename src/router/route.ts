@@ -62,6 +62,14 @@ export const CommonRoute = [
           title: "tinymce富文本编辑器",
         },
       },
+      {
+        path: "ckeditor",
+        name: "CKEditor",
+        component: () => import("../views/Editor/CKEditor/index.vue"),
+        meta: {
+          title: "CKEditor编辑器",
+        },
+      },
     ],
   },
 ];

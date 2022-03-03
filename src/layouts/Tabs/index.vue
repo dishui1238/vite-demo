@@ -39,11 +39,8 @@ export default defineComponent({
     const router = useRouter()
     const go = useGo()
 
-    console.log('router', router.currentRoute.value);
-
     listenRouteChange((route) => {
       const { path } = route
-      console.log('route', route);
       activeKeyRef.value = path
       addTab(route)
     })

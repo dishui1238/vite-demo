@@ -90,6 +90,7 @@
       const editorRef = ref<Editor>()
 
       const initOptions = computed((): RawEditorSettings => {
+        console.log(import.meta.env.VITE_PUBLIC_PATH);
         const publicPath = import.meta.env.VITE_PUBLIC_PATH || '/'
 
         const {

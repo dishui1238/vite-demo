@@ -7,11 +7,12 @@
       </span>
       <LayoutBreadcrumb />
     </div>
+    <div :class="`${prefixCls}-right`">123</div>
   </Header>
 </template>
 
 <script lang="ts">
-import { defineComponent, watchEffect } from 'vue'
+import { defineComponent } from 'vue'
 import { Layout } from 'ant-design-vue'
 import {
   MenuUnfoldOutlined,
@@ -42,6 +43,8 @@ export default defineComponent({
 
 <style lang="less" scoped>
 .layout-header {
+  display: flex;
+  justify-content: space-between;
   &-left {
     display: flex;
     align-items: center;
@@ -49,6 +52,10 @@ export default defineComponent({
   &-trigger {
     font-size: 16px;
     padding: 1px 10px;
+  }
+  &-right {
+    display: flex;
+    align-items: center;
   }
 }
 </style>

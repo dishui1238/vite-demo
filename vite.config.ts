@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import usePluginImport from "vite-plugin-importer";
+import WindiCSS from 'vite-plugin-windicss'
 import { generateModifyVars } from './build/generate/generateModifyVars';
 
 
@@ -20,6 +21,7 @@ export default ({ mode }) => {
     mode, // 'development'（开发模式），'production'（生产模式）,在配置中指明将会把 serve 和 build 时的模式 都 覆盖掉。也可以通过命令行 --mode 选项来重写。
     // define: {}, // 定义全局常量替换方式
     plugins: [
+      WindiCSS(),
       vue(),
       usePluginImport({
         libraryName: "ant-design-vue",

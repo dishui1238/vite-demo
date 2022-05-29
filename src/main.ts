@@ -1,5 +1,5 @@
 import '@/styles/index.less'
-
+import 'virtual:windi.css'
 import { createApp } from "vue";
 import { createPinia } from 'pinia';
 import VueLuckyCanvas from '@lucky-canvas/vue'
